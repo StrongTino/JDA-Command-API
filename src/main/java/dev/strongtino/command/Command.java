@@ -30,8 +30,11 @@ public abstract class Command extends ListenerAdapter {
      * Constructors used if we don't need all parameters.
      * Unused variables are set as null or default value and will not make an impact on the command.
      *
-     * Example: If you don't insert a permission in the constructor, everyone will be able to execute the command.
+     * Example: If you use the no args constructor you can then have multiple commands in single class by checking the first argument
      */
+    public Command() {
+        this(null, new ArrayList<>(), null);
+    }
     public Command(String command) {
         this(command, new ArrayList<>(), null);
     }
